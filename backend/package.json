@@ -1,5 +1,5 @@
 {
-  "name": "be208",
+  "name": "ornifriends",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -23,7 +23,7 @@
       "pretty-quick --staged"
     ]
   },
-  "author": "Armagan Amcalar <armagan@amcalar.com>",
+  "author": "Jorge Torres",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",

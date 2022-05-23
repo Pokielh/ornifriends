@@ -6,7 +6,7 @@ const dbName = process.env.MONGODB_DATABASE
 let connectionString = process.env.MONGODB_CONNECTION_STRING
 
 if (!connectionString) {
-  connectionString = `mongodb+srv://${username}:${password}@cluster0.knvjh.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`
+  connectionString = `mongodb+srv://${username}:${password}@cluster0.pa63v.mongodb.net/${dbName}?retryWrites=true&w=majority`
 }
 
 mongoose.set('debug', true)

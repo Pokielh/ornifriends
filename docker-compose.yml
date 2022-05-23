@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.frontend.rule=Host(`picories.localhost`)'
+      - 'traefik.http.routers.frontend.rule=Host(`ornifriends.localhost`)'
       - 'traefik.http.routers.frontend.entrypoints=web'
     ports:
       - 8080
@@ -26,7 +26,7 @@ services:
       - MONGODB_CONNECTION_STRING=mongodb://mongo/be208
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.backend.rule=(Host(`picories.localhost`) && PathPrefix(`/api`))'
+      - 'traefik.http.routers.backend.rule=(Host(`ornifriends.localhost`) && PathPrefix(`/api`))'
       - 'traefik.http.routers.backend.entrypoints=web'
     ports:
       - 3000
