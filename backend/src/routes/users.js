@@ -24,6 +24,19 @@ router.get('/', async (req, res) => {
   res.send(await User.find(query))
 })
 
+router.delete('/', async (req, res) => {
+  console.log('hello from aux')
+
+  await User.deleteMany({})
+  res.send()
+})
+router.delete('/:userId', async (req, res) => {
+  const user = await User.findById(req.params.userId)
+  console.log(user)
+  await User.deleteOne()
+  res.send()
+})
+
 /* POST create a user */
 router.post('/', async (req, res) => {
   const createdUser = await User.create(req.body)
