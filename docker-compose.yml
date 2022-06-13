@@ -5,6 +5,8 @@ services:
     build:
       context: frontend
       dockerfile: Dockerfile
+    environment:
+      - PORT=8080
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.frontend.rule=Host(`ornifriends.localhost`)'
@@ -23,7 +25,7 @@ services:
       # - MONGODB_USERNAME
       # - MONGODB_PASSWORD
       # - MONGODB_DATABASE
-      - MONGODB_CONNECTION_STRING=mongodb://mongo/be208
+      - MONGODB_CONNECTION_STRING=mongodb://mongo/ornifriends
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.backend.rule=(Host(`ornifriends.localhost`) && PathPrefix(`/api`))'
