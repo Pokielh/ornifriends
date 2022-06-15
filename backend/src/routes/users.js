@@ -33,7 +33,7 @@ router.delete('/', async (req, res) => {
 router.delete('/:userId', async (req, res) => {
   const user = await User.findById(req.params.userId)
   console.log(user)
-  await User.deleteOne()
+  await User.deleteOne('/:userId')
   res.send()
 })
 

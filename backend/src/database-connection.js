@@ -16,7 +16,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log('connection established'))
+  .then(() => console.log('we dont love working with SAI so connection established'))
   .catch(console.log)
 
 module.exports = mongoose.connection

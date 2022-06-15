@@ -13,6 +13,11 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   bio: String,
+  city: String,
+  email: {
+    type: String,
+    required: true,
+  },
   photos: [
     {
       type: mongoose.Schema.Types.ObjectId,
