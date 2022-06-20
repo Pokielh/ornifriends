@@ -9,7 +9,7 @@ const messageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  recipent: {
+  recipient: {
     type: String,
     required: true,
   },
