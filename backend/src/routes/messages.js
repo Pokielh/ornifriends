@@ -49,5 +49,11 @@ router.get('/id/:id', async (req, res) => {
     res.send(`Error: ${e.message}`)
   }
 })
+// Post a new message
+router.post('/', async (req, res) => {
+  console.log('Jorge')
+  const createdMessages = await Message.create(req.body)
+  res.send(createdMessages)
+})
 
 module.exports = router
