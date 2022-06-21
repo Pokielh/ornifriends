@@ -13,6 +13,7 @@ const User = require('./models/user')
 require('./database-connection')
 
 const clientPromise = mongoose.connection.asPromise().then(connection => connection.getClient())
+const socketService = require('./socket-service')
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
@@ -22,10 +23,11 @@ const messagesRouter = require('./routes/messages')
 
 const app = express()
 
+//cors allows different domains to interact with each other. normally this would be a security issue and only trusted domains should be allowed to make requests on our domains.
 app.use(
   cors({
     origin: true,
-    creadentials: true,
+    credentials: true,
   })
 )
 
@@ -37,7 +39,10 @@ if (app.get('env') == 'development') {
     .createServer({ extraExts: ['pug'] })
     .watch([`${__dirname}/public`, `${__dirname}/views`])
 }
+
 app.set('trust proxy', 1)
+app.set('io', socketService)
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
