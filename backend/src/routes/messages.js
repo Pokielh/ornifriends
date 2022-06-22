@@ -18,7 +18,7 @@ router.get('/init', async (req, res) => {
     message: 'Hello',
     subject: 'Titel',
     sender: 'email ',
-    recipent: 'email 1 ',
+    recipient: 'email 1 ',
   })
   console.log(message1)
   message1.subject = 'Anything'
@@ -29,7 +29,7 @@ router.get('/init', async (req, res) => {
     message: 'Hello',
     subject: 'Titel',
     sender: 'email ',
-    recipent: 'email 1 ',
+    recipient: 'email 1 ',
   })
   console.log(message2)
   message2.subject = 'Something else'
@@ -51,7 +51,7 @@ router.get('/id/:id', async (req, res) => {
 })
 // Post a new message
 router.post('/', async (req, res) => {
-  console.log('Jorge')
+  console.log('Jorge Torres')
   const createdMessages = await Message.create(req.body)
   res.send(createdMessages)
 })
